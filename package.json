@@ -1,0 +1,15 @@
+{
+  "name": "notejs",
+  "version": "0.0.0",
+  "description": "An app to store notes as markdown and latex.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammad Samiul Islam (forthright48)",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
