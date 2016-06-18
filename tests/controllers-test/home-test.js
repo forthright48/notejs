@@ -6,6 +6,7 @@
     server,
     app
   } = require('../../server.js');
+  const cheerio = require('cheerio');
   const request = require('superagent');
   const baseurl = 'http://localhost:1234';
 
@@ -37,7 +38,10 @@
         response.header['content-type'].should.equal('text/html; charset=utf-8');
       });
 
-      it('should have title notejs');
+      it('should have title notejs', function() {
+        const $ = cheerio.load(response.text);
+        $('title').text().should.be.equal('noteJS');
+      });
     });
 
     after(function(done) {
