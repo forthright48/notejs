@@ -4,7 +4,7 @@
   "description": "An app to store notes as markdown and latex.",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test"
+    "test": "./node_modules/mocha/bin/mocha --recursive ./test"
   },
   "author": "Mohammad Samiul Islam (forthright48)",
   "license": "MIT",

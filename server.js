@@ -8,10 +8,15 @@
 
   /*App*/
   app.set('port', process.env.PORT || 4801);
+  app.set('view engine', 'pug');
 
-  function boot() {
+
+  /*Add routers*/
+  require('./controller/home.js').addRouter(app);
+
+  function boot(print) {
     server.listen(app.get('port'), function() {
-      console.log(`Server running at port ${ app.get('port') }`);
+      if (print) console.log(`Server running at port ${ app.get('port') }`);
     });
   }
 
@@ -20,7 +25,7 @@
   }
 
   if (require.main === module) {
-    boot();
+    boot(1);
   } else {
     module.exports = {
       boot,
