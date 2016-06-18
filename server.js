@@ -9,27 +9,20 @@
   /*App*/
   app.set('port', process.env.PORT || 4801);
   app.set('view engine', 'pug');
+  app.set('views', `${__dirname}/views`);
 
 
   /*Add routers*/
-  require('./controller/home.js').addRouter(app);
-
-  function boot(print) {
-    server.listen(app.get('port'), function() {
-      if (print) console.log(`Server running at port ${ app.get('port') }`);
-    });
-  }
-
-  function shutDown() {
-    server.close();
-  }
+  require('./controllers/home.js').addRouter(app);
 
   if (require.main === module) {
-    boot(1);
+    server.listen(app.get('port'), function() {
+      console.log(`Server running at port ${ app.get('port') }`);
+    });
   } else {
     module.exports = {
-      boot,
-      shutDown,
+      dirname: __dirname,
+      server,
       app
     };
   }

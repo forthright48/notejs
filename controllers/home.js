@@ -18,6 +18,6 @@
   *******************************************/
 
   function getHome(req, res) {
-    res.send('OK');
+    return res.render('home.pug');
   }
 }());
