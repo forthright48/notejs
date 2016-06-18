@@ -7,6 +7,8 @@
     server,
     app
   } = require('../server.js');
+  const request = require('superagent');
+  const baseurl = 'http://localhost:1234';
 
   describe('server.js', function() {
     before(function(done) {
@@ -27,6 +29,16 @@
 
     it('should be using view/views folder', function() {
       app.get('views').should.equal(`${dirname}/views`);
+    });
+
+    it('should have /public as public directory', function(done) {
+      request
+        .get(`${baseurl}/public/test.txt`)
+        .end(function(err, res) {
+          if (err) done(err);
+          res.text.should.equal('working\n');
+          done();
+        });
     });
 
     after(function(done) {
