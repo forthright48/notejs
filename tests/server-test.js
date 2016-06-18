@@ -18,7 +18,6 @@
       });
     });
 
-
     it('should be running on port 4801', function() {
       app.get('port').should.equal(1234);
     });
@@ -27,7 +26,7 @@
       app.get('view engine').should.equal('pug');
     });
 
-    it('should be using view/views folder', function() {
+    it('should be using /views as render folder', function() {
       app.get('views').should.equal(`${dirname}/views`);
     });
 

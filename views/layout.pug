@@ -4,6 +4,19 @@ html
     title noteJS
     block head
 
+      <!--Jquery-->
+      script(src="https://code.jquery.com/jquery-3.0.0.min.js",
+        integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+        crossorigin="anonymous")
+
+
+      link(rel="stylesheet", href="/public/css/normalize.css", media="screen", title="no title", charset="utf-8")
+      link(rel="stylesheet", href="/public/css/skeleton.css", media="screen", title="no title", charset="utf-8")
+      link(rel="stylesheet", href="/public/css/style.css", media="screen", title="no title", charset="utf-8")
+      link(rel="stylesheet", href="/public/css/markdown.css", media="screen", title="no title", charset="utf-8")
+
+      link(href="https://fonts.googleapis.com/css?family=Raleway", rel="stylesheet" type="text/css")
+
   body
     .container
         block content
