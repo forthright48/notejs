@@ -64,7 +64,7 @@
   flex-direction: column-reverse;
 }
 
-.item {
+.items, .item {
   box-sizing: border-box;
 
   -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; -webkit-box-flex: 0;

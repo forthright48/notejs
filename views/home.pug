@@ -1,17 +1,21 @@
 extends layout
 
 block content
-  .box
-    .any.items.u-text-center
-      h1 noteJS
-  .box.u-fill-view.u-flex-top
-    .any.items.u-text-center
-      .container
-        .box
-          .any.items
-            h2 Write Note
-        .box.u-fill-view
-          .any.items
-            textarea.noresize
-    .any.items.u-text-center
-      h2 Preview Note
+  .container
+    header.row
+      .any.items.u-text-center
+        h1 noteJS
+    main.row.u-flex
+      .six.tower
+        .items.u-text-center
+          h2 Write Note
+        .items.u-flex
+          textarea
+      .six.tower.u-text-center
+        .items
+          h2 Preview Note
+        .items.u-flex
+          textarea
+    footer.row
+      .any.items.u-text-center
+        p Copyright 2016 Mohammad Samiul Islam
