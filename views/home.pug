@@ -14,8 +14,8 @@ block content
       .six.tower
         .items.u-text-center
           h2 Preview Note
-        .items.u-flex.u-debug
-          #read.u-debug
+        .items.u-flex
+          #read
     footer.row
       .any.items.u-text-center
         p Copyright 2016 Mohammad Samiul Islam
@@ -23,6 +23,7 @@ block content
 block javascript
   script.
     $( document ).ready(function() {
+      $('#read').height($('#write').height());
       $('#write').on('keyup', function(){
         $('#read').html( marked( $(this).val() ) );
       });
