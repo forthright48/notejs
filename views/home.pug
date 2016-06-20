@@ -10,12 +10,18 @@ block content
         .items.u-text-center
           h2 Write Note
         .items.u-flex
-          textarea
+          textarea#write
       .six.tower.u-text-center
         .items
           h2 Preview Note
         .items.u-flex
-          textarea
+          textarea(readonly)#read
     footer.row
       .any.items.u-text-center
         p Copyright 2016 Mohammad Samiul Islam
+
+block javascript
+  script.
+    $('#write').on('keyup', function(){
+      $('#read').html( $(this).val() );
+    });
