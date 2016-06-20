@@ -11,17 +11,19 @@ block content
           h2 Write Note
         .items.u-flex
           textarea#write
-      .six.tower.u-text-center
-        .items
+      .six.tower
+        .items.u-text-center
           h2 Preview Note
-        .items.u-flex
-          textarea(readonly)#read
+        .items.u-flex.u-debug
+          #read.u-debug
     footer.row
       .any.items.u-text-center
         p Copyright 2016 Mohammad Samiul Islam
 
 block javascript
   script.
-    $('#write').on('keyup', function(){
-      $('#read').html( $(this).val() );
+    $( document ).ready(function() {
+      $('#write').on('keyup', function(){
+        $('#read').html( marked( $(this).val() ) );
+      });
     });
